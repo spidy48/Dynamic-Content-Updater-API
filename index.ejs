@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+    <h1 class="dark-mode">Quora Posts</h1>
+    <div class="post-container">
+        <% for(post of posts) {%>
+            <div class="post-card">
+                <h3 class="user"> <%= post.username  %> </h3>
+                <h4 class="post-content"> <%= post.content  %> </h4>
+
+                <div class="button-group">
+                    <form action="http://localhost:8080/posts/<%= post.id %>">
+                        <button class="btn">See in detail</button>
+                    </form>
+
+                    <form action="http://localhost:8080/posts/<%= post.id %>/edit">
+                        <button class="btn">Edit</button>
+                    </form>
+
+                    <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                        <button class="btn delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <a href="http://localhost:8080/posts/new" class="new-post-link">Create New Post</a>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const postCards = document.querySelectorAll('.post-card');
+        
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            postCards.forEach(card => {
+                card.classList.toggle('dark-mode');
+                // Toggle dark mode for the content and user elements within each card
+                card.querySelector('.user').classList.toggle('dark-mode');
+                card.querySelector('.post-content').classList.toggle('dark-mode');
+            });
+
+            // Save the theme preference in localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // On page load, check for saved theme preference
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                postCards.forEach(card => {
+                    card.classList.add('dark-mode');
+                    // Apply dark mode to user and post content elements
+                    card.querySelector('.user').classList.add('dark-mode');
+                    card.querySelector('.post-content').classList.add('dark-mode');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

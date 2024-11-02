@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Post</h1>
+        <div class="create-post-card">
+            <form method="post" action="/posts">
+
+                <input id="username" class="input-field" type="text" placeholder="Enter your username" name="username" required>
+                <br>
+
+                <textarea id="content" class="post-content-textarea" placeholder="Write your post here" name="content" required
+                rows="10" cols="30"></textarea>
+                <br>
+                <button class="submit-btn">Submit Post</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6; /* Light background */
+    color: #333; /* Default text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+h1 {
+    color: #2c3e50; /* Heading color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Dark Theme Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+h1.dark-mode {
+    color: maroon; /* Light heading for dark mode */
+}
+
+.post-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-card {
+    background-color: #ffffff; /* Default card background */
+    border: 1px solid #ddd; /* Default border color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.10); /* Increased shadow effect */
+    transition: box-shadow 0.3s ease, background-color 0.3s; /* Smooth transition */
+}
+
+.post-card:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.post-card.dark-mode {
+    background-color: #1e1e1e; /* Dark card background */
+    border-color: #444; /* Darker border */
+}
+
+.user {
+    color: #34495e; /* Default user color */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.user.dark-mode {
+    color: #a0aec0; /* Lighter user color for dark mode */
+}
+
+.post-content {
+    color: #555; /* Default post content color */
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.post-content.dark-mode {
+    color: #ffffff; /* Change post content color to white in dark mode */
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #3498db; /* Default button color */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9; /* Button hover effect */
+}
+
+.btn.dark-mode {
+    background-color: #1d9bf0; /* Dark theme button color */
+}
+
+.btn.dark-mode:hover {
+    background-color: #1a8bc7; /* Dark theme button hover */
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Default delete button color */
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Delete button hover effect */
+}
+
+.delete-btn.dark-mode {
+    background-color: #c0392b; /* Dark theme delete button color */
+}
+
+.delete-btn.dark-mode:hover {
+    background-color: #a8322c; /* Dark theme delete button hover */
+}
+
+.new-post-link {
+    color: #3498db; /* New post link color */
+    font-size: 1em;
+    margin-top: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.new-post-link:hover {
+    border-color: #3498db; /* New post link hover effect */
+}
